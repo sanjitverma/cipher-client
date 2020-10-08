@@ -1,0 +1,30 @@
+<div class="center">
+    <br/>
+    <br/>
+    <!-- <div class="column">
+        <label>Enter text to decode</label>
+        <br />
+        <textarea [(ngModel)]="userText" rows="4" cols="50"></textarea>
+        <br /><br />
+        <button (click)="submitForm()">Decode</button>
+    </div> -->
+    <div class="column">
+        <form [formGroup]="formModel" (ngSubmit)="submitForm()">
+          <label>Enter text to decode</label>
+          <br />
+          <textarea id="text-container" formControlName="userText" rows="4" cols="50">
+          </textarea>
+          <span *ngIf="userText.errors && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass] = "'error'">
+            Type at least 1 characters
+          </span>
+          <br /><br />
+          <input type="submit" value="Decode" />
+        </form>
+    </div>
+    <div class="column">
+        <div *ngIf='response'>
+         <h1>Decoded text : {{ response.responseText }}</h1>
+        </div>
+    </div>
+</div>
+<h3><a class="link" routerLink="" routerLinkActive="active">Back</a></h3>

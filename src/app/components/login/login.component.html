@@ -1,0 +1,25 @@
+<div class="center">
+
+    <nav>
+        <form [formGroup]="formModel" (ngSubmit)="checkLogin()">
+            <ul>
+                <span class="user">User Name :  &nbsp;<input type="text" formControlName="userName">
+                    &nbsp;&nbsp;&nbsp;
+                    <span *ngIf="userName.errors && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass] = "'error'">
+                        Please enter username
+                    </span>
+                </span>
+                <span class="user">Password  &nbsp; : &nbsp;<input type="password" formControlName="password">
+                    &nbsp;&nbsp;&nbsp;
+                    <span *ngIf="password.errors && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass] = "'error'">
+                            Please enter password
+                    </span>
+                </span>
+                <div class="error" *ngIf="invalidLogin">
+                    <h3>Invalid username or password. Please try again</h3>
+                </div>
+                <span class="user"><button type="submit" class="btn btn-success">Login</button></span>
+            </ul>
+        </form>
+    </nav>
+</div>

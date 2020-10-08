@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Cipher Text</a>
+  </div>
+</nav>
+<div class="home-page">
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font">Cipher Text</h1>
+      <p>A mini app to <i>cipher</i> your text.</p>
+    </div>
+    Hello <span *ngIf="!authenticationService.isUserLoggedIn()">User</span>
+          <span *ngIf="authenticationService.isUserLoggedIn()">{{ user }}</span>
+      <a class="link" *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/login" >Login</a>
+      <a class="link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout" >LogOut</a>
+  </div>
+</div>

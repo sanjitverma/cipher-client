@@ -1,0 +1,12 @@
+<div class="center">
+  <nav *ngIf="authenticationService.isUserLoggedIn()">
+    <ul>
+      <li><a routerLink="/encode-component" routerLinkActive="active">Encode Text</a></li>
+      <li><a routerLink="/decode-component" routerLinkActive="active">Decode Text</a></li>
+    </ul>
+  </nav>
+  <nav *ngIf="!authenticationService.isUserLoggedIn()">
+    Welcome to Cipher Text. Please login to use Cipher service
+  </nav>
+</div>
+<router-outlet></router-outlet>

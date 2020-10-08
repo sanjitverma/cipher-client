@@ -1,0 +1,28 @@
+body {
+    background-color: #fafafa;
+}
+body {
+    color: #4a4a4a;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+body, button, input, textarea {
+    font-family: Ubuntu,Arial,Helvetica,Verdana,sans-serif;
+}
+
+.navbar-brand {
+    align-items: stretch;
+    display: flex;
+    flex-shrink: 0;
+    min-height: 3.125rem;
+}
+
+.navbar>.container {
+    max-width: 1140px;
+}
+
+.navbar>.container {
+    display: block;
+}
